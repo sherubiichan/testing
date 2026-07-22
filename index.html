@@ -891,7 +891,20 @@ document.head.appendChild(style);
             }
         }
 
+                    // Add play overlay
+                    const playOverlay = document.createElement('div');
+                    playOverlay.className = 'play-overlay';
+                    playOverlay.innerHTML = '<div class="play-button">▶️ PLAY</div>';
+                    card.appendChild(playOverlay);
+                }
+            }
+        });
+    }
+}
 
+// Add complete quest button to modal
+function addCompleteQuestButton(questId) {
+    const gameControls = document.querySelector('.game-controls');
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('gameModal');
