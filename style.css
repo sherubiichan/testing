@@ -15,7 +15,7 @@ body {
     height: 100vh;
     width: 100vw;
 	overflow: hidden;
-	background: #f1c40f;
+	background: linear-gradient(135deg, #cfe2f3 0%, #9fc5e8 25%, #2986cc 50%, #6aa84f 75%, #cfe2f3 100%);
 }
 
 .flipbook {
