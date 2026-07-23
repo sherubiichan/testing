@@ -93,6 +93,41 @@
             // Start spawning sparks immediately
             setInterval(createSpark, 300);
         });
+        /* --- Spark Particle Styles --- */
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.spark {
+    position: absolute;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(212,175,55,0.8) 40%, rgba(139,92,246,0) 100%);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.8));
+    animation: driftUpwards linear forwards;
+}
+
+@keyframes driftUpwards {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-105vh) translateX(var(--sway, 30px)) scale(1.2);
+        opacity: 0;
+    }
+}
+
     </script>
 </body>
 </html>
