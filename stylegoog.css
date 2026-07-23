@@ -1,3 +1,5 @@
+@import url('https://googleapis.com');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -180,6 +182,19 @@ body {
         #b8901b 55%,    /* Gold stripe end */
         #111 55%        /* Dark bottom half */
     );
+}
+/* Custom font tweak just for the Elven book */
+.spine-gold .book-title {
+    font-family: 'Cinzel Decorative', serif;
+    color: #fffbeb;
+    letter-spacing: 5px;
+}
+
+/* Custom font tweak just for the Shadow/Dark Arts book */
+.spine-purple .book-title, .spine-black .book-title {
+    font-family: 'MedievalSharp', cursive;
+    color: #f8fafc;
+    letter-spacing: 1px;
 }
 
 
