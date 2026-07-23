@@ -171,6 +171,16 @@ body {
 .spine-wizard:hover {
     box-shadow: 0 0 25px rgba(217, 119, 6, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
 }
+/* A black spine with a thick gold ribbon running horizontally across the center */
+.spine-gold-band {
+    background: linear-gradient(
+        to bottom,
+        #111 40%,       /* Dark top half */
+        #d4af37 40%,    /* Gold stripe start */
+        #b8901b 55%,    /* Gold stripe end */
+        #111 55%        /* Dark bottom half */
+    );
+}
 
 
 @keyframes floating-slight {
