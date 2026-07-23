@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1520; /* Deep mystic purple/black background */
+    color: #e0d4c8;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.library-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.library-header h1 {
+    font-size: 3rem;
+    color: #d4af37; /* Gold lettering */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.bookshelf-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 120px; /* Space between shelves */
+    padding-top: 50px;
+}
+
+.shelf {
+    position: relative;
+}
+
+.books {
+    display: flex;
+    align-items: flex-end; /* Line up books on the bottom shelf */
+    gap: 15px; /* Space between books */
+    padding: 0 40px;
+    height: 270px; /* Gives space for taller books */
+}
+
+/* The Wooden Board */
+.shelf-board {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, #5c3a21, #382212);
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+/* Book Styling */
+.book {
+    width: 60px;
+    background-color: #999;
+    border-radius: 4px 4px 0 0;
+    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5), inset 2px 0 5px rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.book:hover {
+    transform: translateY(-20px) scale(1.05); /* "Pulling" a book off the shelf */
+    box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7);
+    z-index: 5;
+}
+
+.book-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+/* Magical Spine Colors */
+.spine-red { background: linear-gradient(#b32d2d, #801414); }
+.spine-gold { background: linear-gradient(#d4af37, #b8901b); }
+.spine-purple { background: linear-gradient(#7e30a6, #501370); }
+.spine-blue { background: linear-gradient(#267cd4, #124c8a); }
+.spine-green { background: linear-gradient(#30a649, #137025); }
+.spine-black { background: linear-gradient(#424242, #1f1f1f); }
+.spine-teal { background: linear-gradient(#26a4a6, #12686a); }
