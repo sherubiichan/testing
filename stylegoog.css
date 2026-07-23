@@ -17,15 +17,53 @@ body {
 
 .library-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem; /* Adds more breathing room above the top shelf */
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+/* --- Decorative Magical Underline Ribbon --- */
+.library-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 3px;
+    /* Creates a gold-to-transparent magical divider line under your header text */
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+    box-shadow: 0 0 8px #d4af37;
 }
 
 .library-header h1 {
-    font-size: 3.5rem;
-    color: #d4af37;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.2);
-    margin-bottom: 0.5rem;
+    font-family: 'Cinzel Decorative', serif; /* Apply the royal fantasy font */
+    font-size: 4rem; /* Enlarged for a majestic appearance */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    
+    /* Elegant metallic gold text coloring */
+    background: linear-gradient(to bottom, #ffeaa7, #d4af37, #aa7c11);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Double-layered glowing ambiance behind the letters */
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)) 
+            drop-shadow(0 0 20px rgba(168, 85, 247, 0.2));
+            
+    margin-bottom: 0.75rem;
 }
+
+.library-header p {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #a78bfa; /* Swapped subtitle to a soft cosmic purple */
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 
 .bookshelf-container {
     max-width: 1000px;
