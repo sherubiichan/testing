@@ -18,6 +18,35 @@ body {
 	background: linear-gradient(135deg, #cfe2f3 0%, #9fc5e8 25%, #2986cc 50%, #6aa84f 75%, #cfe2f3 100%);
 }
 
+ /* small floating sparkle dots behind the title — purely decorative */
+  .sparkles { position: absolute; inset: 0; pointer-events: none; }
+  .sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 8px 2px rgba(255,255,255,0.9);
+    opacity: 0.8;
+    animation: float 6s ease-in-out infinite;
+  }
+  .s1 { top: 10%;  left: 12%; animation-delay: 0s; }
+  .s2 { top: 30%;  left: 85%; animation-delay: 1.2s; }
+  .s3 { top: 70%;  left: 20%; animation-delay: 2.1s; width: 4px; height: 4px; }
+  .s4 { top: 15%;  left: 55%; animation-delay: 0.6s; width: 5px; height: 5px; }
+  .s5 { top: 80%;  left: 75%; animation-delay: 3s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50%      { transform: translateY(-12px); opacity: 1; }
+  }
+
+  /* respect users who prefer less motion */
+  @media (prefers-reduced-motion: reduce) {
+    .sparkle { animation: none; }
+    .book { transition: none; }
+  }
+
 .flipbook {
     width: 1000px;
     height: 600px;
