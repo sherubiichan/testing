@@ -142,6 +142,35 @@ body {
     border-left: 4px solid #d4af37; /* Adds a gold binding stripe on the edge */
     border-right: 4px solid #d4af37;
 }
+/* --- TEXTURE OPTION 1: Weathered Ancient Leather --- */
+.spine-leather {
+    /* Uses layered gradients to create a textured, rough leather look */
+    background: 
+        radial-gradient(rgba(0,0,0,0.15) 15%, transparent 20%),
+        radial-gradient(rgba(0,0,0,0.15) 15%, transparent 20%),
+        linear-gradient(to bottom, #59351d, #2b170b);
+    background-position: 0 0, 4px 4px, 0 0;
+    background-size: 8px 8px, 8px 8px, 100% 100%;
+    border-top: 5px solid #1a0e07; /* Weathered top trim */
+}
+.spine-leather:hover {
+    box-shadow: 0 0 25px rgba(139, 92, 26, 0.6), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+/* --- TEXTURE OPTION 2: Enchanted Metallic Wizard Stripes --- */
+.spine-wizard {
+    /* Creates a repeating pattern of gold metallic ribbing across a purple spine */
+    background: repeating-linear-gradient(
+        45deg,
+        #4c1d95,
+        #4c1d95 10px,
+        #b45309 10px,
+        #d97706 15px /* Gold stripe width */
+    );
+}
+.spine-wizard:hover {
+    box-shadow: 0 0 25px rgba(217, 119, 6, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
 
 
 @keyframes floating-slight {
