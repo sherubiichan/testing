@@ -17,18 +17,19 @@
         <!-- Shelf 1 -->
         <div class="shelf">
             <div class="books">
-                <div class="book spine-red" style="height: 220px;" title="Ancient Art & Beliefs, week 0">
-                    <span class="book-title">Ancient Art & Beliefs</span>
-                </div>
-                <div class="book spine-gold" style="height: 200px;" title="Elven Lore">
+                <!-- target="_blank" guarantees it opens in a clean new browser tab -->
+                <a href="https://example.com" target="_blank" class="book spine-red" style="height: 220px;" title="The Tome of Dragons">
+                    <span class="book-title">Ancient Art</span>
+                </a>
+                <a href="https://example.com" target="_blank" class="book spine-gold" style="height: 200px;" title="Elven Lore">
                     <span class="book-title">Elves</span>
-                </div>
-                <div class="book spine-purple" style="height: 240px;" title="Spellbook of Shadows">
+                </a>
+                <a href="https://example.com" target="_blank" class="book spine-purple" style="height: 240px;" title="Spellbook of Shadows">
                     <span class="book-title">Shadows</span>
-                </div>
-                <div class="book spine-blue" style="height: 210px;" title="The Ocean's Magic">
+                </a>
+                <a href="https://example.com" target="_blank" class="book spine-blue" style="height: 210px;" title="The Ocean's Magic">
                     <span class="book-title">Oceans</span>
-                </div>
+                </a>
             </div>
             <div class="shelf-board"></div>
         </div>
@@ -36,52 +37,19 @@
         <!-- Shelf 2 -->
         <div class="shelf">
             <div class="books">
-                <div class="book spine-green" style="height: 230px;" title="Forest Herbalism">
+                <a href="https://example.com" target="_blank" class="book spine-green" style="height: 230px;" title="Forest Herbalism">
                     <span class="book-title">Herbs</span>
-                </div>
-                <div class="book spine-black" style="height: 250px;" title="Dark Arts & Runes">
+                </a>
+                <a href="https://example.com" target="_blank" class="book spine-black" style="height: 250px;" title="Dark Arts & Runes">
                     <span class="book-title">Runes</span>
-                </div>
-                <div class="book spine-teal" style="height: 205px;" title="The Astral Plane">
+                </a>
+                <a href="https://example.com" target="_blank" class="book spine-teal" style="height: 205px;" title="The Astral Plane">
                     <span class="book-title">Astral</span>
-                </div>
+                </a>
             </div>
             <div class="shelf-board"></div>
         </div>
     </main>
-     <!-- Script to run the popup logic -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const books = document.querySelectorAll('.book');
-            const modal = document.getElementById('book-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDesc = document.getElementById('modal-desc');
-            const closeBtn = document.getElementById('modal-close');
 
-            // Open modal when a book is clicked
-            books.forEach(book => {
-                book.addEventListener('click', () => {
-                    const title = book.getAttribute('title');
-                    const desc = book.getAttribute('data-desc');
-                    
-                    modalTitle.textContent = title;
-                    modalDesc.textContent = desc;
-                    modal.classList.add('active');
-                });
-            });
-
-            // Close modal when close button is clicked
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
-
-            // Close modal if user clicks outside the card area
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
