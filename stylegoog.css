@@ -126,6 +126,19 @@ body {
 .spine-teal { background: linear-gradient(#208e91, #094142); }
 .spine-teal:hover { box-shadow: 0 0 25px rgba(20, 184, 166, 0.7), -5px 15px 20px rgba(0,0,0,0.6); }
 
+/* Custom Spine Profile */
+.spine-orange { 
+    /* Left color is the top of the book, right color is the bottom shadow */
+    background: linear-gradient(#e65c00, #993d00); 
+}
+
+/* Custom Glow Color on Hover */
+.spine-orange:hover { 
+    /* Change the rgba color values to change the magical glow tint */
+    box-shadow: 0 0 25px rgba(230, 92, 0, 0.8), -5px 15px 20px rgba(0,0,0,0.6); 
+}
+
+
 @keyframes floating-slight {
     0% { transform: translateY(0); }
     100% { transform: translateY(-6px); }
