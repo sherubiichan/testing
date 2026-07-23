@@ -5,22 +5,25 @@
 }
 
 body {
-    background-color: #1a1520; /* Deep mystic purple/black background */
+    background-color: #0c0812; /* Darker arcane background */
     color: #e0d4c8;
     font-family: 'Georgia', serif;
     min-height: 100vh;
     padding: 2rem;
+    overflow-x: hidden;
 }
 
 .library-header {
     text-align: center;
     margin-bottom: 3rem;
+    position: relative;
 }
 
 .library-header h1 {
-    font-size: 3rem;
-    color: #d4af37; /* Gold lettering */
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    font-size: 3.5rem;
+    color: #d4af37;
+    /* Soft ambient text glow */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.2);
     margin-bottom: 0.5rem;
 }
 
@@ -29,7 +32,7 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 120px; /* Space between shelves */
+    gap: 120px;
     padding-top: 50px;
 }
 
@@ -37,59 +40,137 @@ body {
     position: relative;
 }
 
+/* Ambient glow cast on the wall behind each shelf */
+.shelf::before {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    height: 180px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    filter: blur(20px);
+    pointer-events: none;
+}
+
 .books {
     display: flex;
-    align-items: flex-end; /* Line up books on the bottom shelf */
-    gap: 15px; /* Space between books */
+    align-items: flex-end;
+    gap: 15px;
     padding: 0 40px;
-    height: 270px; /* Gives space for taller books */
+    height: 270px;
+    position: relative;
+    z-index: 2;
 }
 
 /* The Wooden Board */
 .shelf-board {
     width: 100%;
     height: 20px;
-    background: linear-gradient(to bottom, #5c3a21, #382212);
+    background: linear-gradient(to bottom, #4a2e1b, #26160b);
     border-radius: 5px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
-    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 3;
 }
 
 /* Book Styling */
 .book {
     width: 60px;
-    background-color: #999;
     border-radius: 4px 4px 0 0;
-    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5), inset 2px 0 5px rgba(255,255,255,0.2);
+    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.6), inset 2px 0 5px rgba(255,255,255,0.1);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 }
 
+/* Subtly breathe life into the magical library by pulsing unhovered books */
+.book {
+    animation: floating-slight 4s ease-in-out infinite alternate;
+}
+
+/* Stagger the animation so all books do not float at the exact same rhythm */
+.book:nth-child(2n) { animation-delay: 0.5s; animation-duration: 4.5s; }
+.book:nth-child(3n) { animation-delay: 1s; animation-duration: 3.8s; }
+
+/* Interactive hover aura and movement */
 .book:hover {
-    transform: translateY(-20px) scale(1.05); /* "Pulling" a book off the shelf */
-    box-shadow: -5px 10px 15px rgba(0, 0, 0, 0.7);
-    z-index: 5;
+    transform: translateY(-30px) scale(1.08) rotate(-2deg);
+    animation-play-state: paused; /* Freeze the background floating animation on hover */
+    z-index: 15;
 }
 
 .book-title {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: bold;
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.85;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
-/* Magical Spine Colors */
-.spine-red { background: linear-gradient(#b32d2d, #801414); }
-.spine-gold { background: linear-gradient(#d4af37, #b8901b); }
-.spine-purple { background: linear-gradient(#7e30a6, #501370); }
-.spine-blue { background: linear-gradient(#267cd4, #124c8a); }
-.spine-green { background: linear-gradient(#30a649, #137025); }
-.spine-black { background: linear-gradient(#424242, #1f1f1f); }
-.spine-teal { background: linear-gradient(#26a4a6, #12686a); }
+/* Magical Spine Colors + Custom Glows */
+.spine-red { 
+    background: linear-gradient(#b32d2d, #660c0c); 
+}
+.spine-red:hover {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-gold { 
+    background: linear-gradient(#d4af37, #8a6d1c); 
+}
+.spine-gold:hover {
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-purple { 
+    background: linear-gradient(#7e30a6, #3c0954); 
+}
+.spine-purple:hover {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-blue { 
+    background: linear-gradient(#267cd4, #0a335e); 
+}
+.spine-blue:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-green { 
+    background: linear-gradient(#2e9944, #0a4716); 
+}
+.spine-green:hover {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-black { 
+    background: linear-gradient(#3a3a3a, #111111); 
+    border: 1px solid #444;
+}
+.spine-black:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-teal { 
+    background: linear-gradient(#208e91, #094142); 
+}
+.spine-teal:hover {
+    box-shadow: 0 0 25px rgba(20, 184, 166, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+/* Animations */
+@keyframes floating-slight {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
