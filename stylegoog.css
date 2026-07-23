@@ -1,148 +1,86 @@
-
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    background-color: #0c0812; 
-    color: #e0d4c8;
-    font-family: 'Modern Antiqua', serif;
-    min-height: 100vh;
-    padding: 2rem;
-    overflow-x: hidden;
-}
-
-.library-header {
-    text-align: center;
-    margin-bottom: 4rem; /* Adds more breathing room above the top shelf */
-    position: relative;
-    padding-bottom: 1.5rem;
-}
-
-/* --- Decorative Magical Underline Ribbon --- */
-.library-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 250px;
-    height: 3px;
-    /* Creates a gold-to-transparent magical divider line under your header text */
-    background: linear-gradient(to right, transparent, #d4af37, transparent);
-    box-shadow: 0 0 8px #d4af37;
-}
-
-.library-header h1 {
-    font-family: 'Cinzel Decorative', serif; /* Apply the royal fantasy font */
-    font-size: 4rem; /* Enlarged for a majestic appearance */
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    
-    /* Elegant metallic gold text coloring */
-    background: linear-gradient(to bottom, #ffeaa7, #d4af37, #aa7c11);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    /* Double-layered glowing ambiance behind the letters */
-    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)) 
-            drop-shadow(0 0 20px rgba(168, 85, 247, 0.2));
-            
-    margin-bottom: 0.75rem;
-}
-
-.library-header p {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: #a78bfa; /* Swapped subtitle to a soft cosmic purple */
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-
+/* --- 1. THE MAIN CONTAINER --- */
 .bookshelf-container {
-    max-width: 1000px;
+    max-width: 1000px; /* Adjust this to match your site's content width */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 120px;
-    padding-top: 50px;
+    gap: 100px; /* Space between different rows of shelves */
+    padding: 40px 10px;
 }
 
 .shelf {
     position: relative;
+    width: 100%;
 }
 
-.shelf::before {
-    content: '';
-    position: absolute;
-    bottom: 20px;
-    left: 5%;
-    width: 90%;
-    height: 180px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-    filter: blur(20px);
-    pointer-events: none;
-}
-
+/* --- 2. THE BOOK ROW --- */
 .books {
     display: flex;
-    align-items: flex-end;
-    gap: 15px;
+    align-items: flex-end; /* Keeps books sitting flat on the board */
+    gap: 15px; /* Spacing between individual books */
     padding: 0 40px;
-    height: 270px;
+    height: 270px; /* Max height area allowed for the tallest book */
     position: relative;
     z-index: 2;
 }
 
+/* --- 3. THE WOODEN BOARD --- */
 .shelf-board {
     width: 100%;
     height: 20px;
+    /* Clean wood gradient - change hex codes to match your wood/metal choice */
     background: linear-gradient(to bottom, #4a2e1b, #26160b);
     border-radius: 5px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 3;
 }
 
-/* Updated for anchor link styling */
+/* --- 4. GENERAL BOOK SHAPE & MOVEMENT --- */
 .book {
-    width: 60px;
+    width: 60px; /* Individual book thickness */
     border-radius: 4px 4px 0 0;
-    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.6), inset 2px 0 5px rgba(255,255,255,0.1);
+    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    text-decoration: none; /* Removes default hyperlink underline */
+    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    
+    /* Gentle idle floating effect */
     animation: floating-slight 4s ease-in-out infinite alternate;
 }
 
+/* Staggers the idle animation so books don't move perfectly in sync */
 .book:nth-child(2n) { animation-delay: 0.5s; animation-duration: 4.5s; }
 .book:nth-child(3n) { animation-delay: 1s; animation-duration: 3.8s; }
 
+/* Interactive Hover Trigger */
 .book:hover {
-    transform: translateY(-30px) scale(1.08) rotate(-2deg);
-    animation-play-state: paused;
+    transform: translateY(-25px) scale(1.05) rotate(-1deg); /* Pulls book up */
+    animation-play-state: paused; /* Freezes idle float while hovering */
     z-index: 15;
 }
 
+/* --- 5. VERTICAL TEXT LABELS --- */
 .book-title {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 0.95rem;
     font-weight: bold;
-    color: #fff;
-    opacity: 0.85;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    color: #ffffff; /* Override this if you prefer dark text on light spines */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    white-space: nowrap;
 }
+
 
 /* Magical Spine Colors & Glow Effects */
 .spine-red { background: linear-gradient(#b32d2d, #660c0c); }
