@@ -16,7 +16,6 @@ body {
 .library-header {
     text-align: center;
     margin-bottom: 3rem;
-    position: relative;
 }
 
 .library-header h1 {
@@ -71,12 +70,13 @@ body {
     z-index: 3;
 }
 
+/* Updated for anchor link styling */
 .book {
     width: 60px;
     border-radius: 4px 4px 0 0;
     box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.6), inset 2px 0 5px rgba(255,255,255,0.1);
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    text-decoration: none; /* Removes default hyperlink underline */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,6 +104,7 @@ body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
+/* Magical Spine Colors & Glow Effects */
 .spine-red { background: linear-gradient(#b32d2d, #660c0c); }
 .spine-red:hover { box-shadow: 0 0 25px rgba(239, 68, 68, 0.7), -5px 15px 20px rgba(0,0,0,0.6); }
 
@@ -129,96 +130,3 @@ body {
     0% { transform: translateY(0); }
     100% { transform: translateY(-6px); }
 }
-/* --- Pop-Up Modal Styles --- */
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(6, 4, 10, 0.85); /* Dark background overlay */
-    backdrop-filter: blur(8px); /* Blurs out the library behind it */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-
-/* Turns the modal on via JavaScript */
-.modal-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-card {
-    background: linear-gradient(135deg, #1f1829, #130e1a);
-    border: 2px solid #d4af37; /* Gold accent frame */
-    padding: 2.5rem;
-    border-radius: 12px;
-    max-width: 500px;
-    width: 90%;
-    position: relative;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2), 0 20px 40px rgba(0, 0, 0, 0.8);
-    text-align: center;
-    transform: translateY(20px);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.modal-overlay.active .modal-card {
-    transform: translateY(0); /* Bounce card into place */
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #a855f7;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.close-btn:hover {
-    color: #eab308;
-}
-
-#modal-title {
-    color: #d4af37;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
-}
-
-#modal-desc {
-    color: #cbd5e1;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    font-style: italic;
-}
-
-.read-btn {
-    background: linear-gradient(90deg, #7e30a6, #501370);
-    color: white;
-    border: 1px solid #a855f7;
-    padding: 0.8rem 2rem;
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    transition: all 0.3s ease;
-}
-
-.read-btn:hover {
-    background: linear-gradient(90deg, #a855f7, #7e30a6);
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
-    transform: translateY(-2px);
-}
-
