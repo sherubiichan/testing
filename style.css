@@ -16,6 +16,14 @@ body {
     width: 100vw;
 	overflow: hidden;
 	background: linear-gradient(135deg, #cfe2f3 0%, #9fc5e8 25%, #2986cc 50%, #6aa84f 75%, #cfe2f3 100%);
+	body {
+    background-image: url('https://img.magnific.com/free-vector/abstract-shape-3d-glass-object_107791-25933.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 }
 
 .flipbook {
