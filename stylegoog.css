@@ -174,3 +174,40 @@ body {
         transform: translateY(-6px);
     }
 }
+/* --- Spark Particle Styles --- */
+
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Allows users to click on books through the layer */
+    z-index: 1; /* Sits behind text and books, but in front of the background */
+    overflow: hidden;
+}
+
+.spark {
+    position: absolute;
+    bottom: -10px; /* Start just off-screen */
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(212,175,55,0.8) 40%, rgba(139,92,246,0) 100%);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.8));
+    animation: drift Upwards linear forwards;
+}
+
+@keyframes driftUpwards {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* Fade in quickly near the bottom */
+    }
+    100% {
+        /* Slightly sway left or right using a dynamic translate via JS, or generic fallback */
+        transform: translateY(-105vh) translateX(var(--sway, 30px)) scale(1.2);
+        opacity: 0; /* Fade completely out at the top */
+    }
+}
+
