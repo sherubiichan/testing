@@ -36,3 +36,4 @@ function createSpark() {
 
 // Generate a new spark every 300 milliseconds
 setInterval(createSpark, 300);
+}
