@@ -1,176 +1,98 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Arcane Archives - Fantasy Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    background-color: #0c0812; /* Darker arcane background */
-    color: #e0d4c8;
-    font-family: 'Georgia', serif;
-    min-height: 100vh;
-    padding: 2rem;
-    overflow-x: hidden;
-}
+    <!-- Particle container for the sparks -->
+    <div id="particle-container"></div>
 
-.library-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
+    <header class="library-header">
+        <h1>The Arcane Archives</h1>
+        <p>Your portal to mystical realms and ancient grimoires.</p>
+    </header>
 
-.library-header h1 {
-    font-size: 3.5rem;
-    color: #d4af37;
-    /* Soft ambient text glow */
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.2);
-    margin-bottom: 0.5rem;
-}
+    <main class="bookshelf-container">
+        <!-- Shelf 1 -->
+        <div class="shelf">
+            <div class="books">
+                <div class="book spine-red" style="height: 220px;" title="The Tome of Dragons">
+                    <span class="book-title">Ancient Art</span>
+                </div>
+                <div class="book spine-gold" style="height: 200px;" title="Elven Lore">
+                    <span class="book-title">Elves</span>
+                </div>
+                <div class="book spine-purple" style="height: 240px;" title="Spellbook of Shadows">
+                    <span class="book-title">Shadows</span>
+                </div>
+                <div class="book spine-blue" style="height: 210px;" title="The Ocean's Magic">
+                    <span class="book-title">Oceans</span>
+                </div>
+            </div>
+            <div class="shelf-board"></div>
+        </div>
 
-.bookshelf-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
-    padding-top: 50px;
-}
+        <!-- Shelf 2 -->
+        <div class="shelf">
+            <div class="books">
+                <div class="book spine-green" style="height: 230px;" title="Forest Herbalism">
+                    <span class="book-title">Herbs</span>
+                </div>
+                <div class="book spine-black" style="height: 250px;" title="Dark Arts & Runes">
+                    <span class="book-title">Runes</span>
+                </div>
+                <div class="book spine-teal" style="height: 205px;" title="The Astral Plane">
+                    <span class="book-title">Astral</span>
+                </div>
+            </div>
+            <div class="shelf-board"></div>
+        </div>
+    </main>
 
-.shelf {
-    position: relative;
-}
+    <!-- Inline Script to ensure execution -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById('particle-container');
+            
+            if (!container) {
+                console.error("Spark container missing!");
+                return;
+            }
 
-/* Ambient glow cast on the wall behind each shelf */
-.shelf::before {
-    content: '';
-    position: absolute;
-    bottom: 20px;
-    left: 5%;
-    width: 90%;
-    height: 180px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-    filter: blur(20px);
-    pointer-events: none;
-}
+            function createSpark() {
+                const spark = document.createElement('div');
+                spark.classList.add('spark');
 
-.books {
-    display: flex;
-    align-items: flex-end;
-    gap: 15px;
-    padding: 0 40px;
-    height: 270px;
-    position: relative;
-    z-index: 2;
-}
+                const size = Math.random() * 5 + 3;
+                spark.style.width = `${size}px`;
+                spark.style.height = `${size}px`;
+                spark.style.left = `${Math.random() * 100}vw`;
 
-/* The Wooden Board */
-.shelf-board {
-    width: 100%;
-    height: 20px;
-    background: linear-gradient(to bottom, #4a2e1b, #26160b);
-    border-radius: 5px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
-    position: relative;
-    z-index: 3;
-}
+                const duration = Math.random() * 7 + 8;
+                spark.style.animationDuration = `${duration}s`;
 
-/* Book Styling */
-.book {
-    width: 60px;
-    border-radius: 4px 4px 0 0;
-    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.6), inset 2px 0 5px rgba(255,255,255,0.1);
-    cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
+                const sway = (Math.random() * 100 - 50) + 'px';
+                spark.style.setProperty('--sway', sway);
 
-/* Subtly breathe life into the magical library by pulsing unhovered books */
-.book {
-    animation: floating-slight 4s ease-in-out infinite alternate;
-}
+                if (Math.random() > 0.6) {
+                    spark.style.background = 'radial-gradient(circle, #fff 0%, #a855f7 50%, transparent 100%)';
+                    spark.style.filter = 'drop-shadow(0 0 5px rgba(168, 85, 247, 0.8))';
+                }
 
-/* Stagger the animation so all books do not float at the exact same rhythm */
-.book:nth-child(2n) { animation-delay: 0.5s; animation-duration: 4.5s; }
-.book:nth-child(3n) { animation-delay: 1s; animation-duration: 3.8s; }
+                container.appendChild(spark);
 
-/* Interactive hover aura and movement */
-.book:hover {
-    transform: translateY(-30px) scale(1.08) rotate(-2deg);
-    animation-play-state: paused; /* Freeze the background floating animation on hover */
-    z-index: 15;
-}
+                setTimeout(() => {
+                    spark.remove();
+                }, duration * 1000);
+            }
 
-.book-title {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #fff;
-    opacity: 0.85;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-}
-
-/* Magical Spine Colors + Custom Glows */
-.spine-red { 
-    background: linear-gradient(#b32d2d, #660c0c); 
-}
-.spine-red:hover {
-    box-shadow: 0 0 25px rgba(239, 68, 68, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
-}
-
-.spine-gold { 
-    background: linear-gradient(#d4af37, #8a6d1c); 
-}
-.spine-gold:hover {
-    box-shadow: 0 0 25px rgba(250, 204, 21, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
-}
-
-.spine-purple { 
-    background: linear-gradient(#7e30a6, #3c0954); 
-}
-.spine-purple:hover {
-    box-shadow: 0 0 25px rgba(168, 85, 247, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
-}
-
-.spine-blue { 
-    background: linear-gradient(#267cd4, #0a335e); 
-}
-.spine-blue:hover {
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
-}
-
-.spine-green { 
-    background: linear-gradient(#2e9944, #0a4716); 
-}
-.spine-green:hover {
-    box-shadow: 0 0 25px rgba(34, 197, 94, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
-}
-
-.spine-black { 
-    background: linear-gradient(#3a3a3a, #111111); 
-    border: 1px solid #444;
-}
-.spine-black:hover {
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3), -5px 15px 20px rgba(0,0,0,0.6);
-}
-
-.spine-teal { 
-    background: linear-gradient(#208e91, #094142); 
-}
-.spine-teal:hover {
-    box-shadow: 0 0 25px rgba(20, 184, 166, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
-}
-
-/* Animations */
-@keyframes floating-slight {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-6px);
-    }
-}
+            // Start spawning sparks immediately
+            setInterval(createSpark, 300);
+        });
+    </script>
+</body>
+</html>
