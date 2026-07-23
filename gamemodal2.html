@@ -1,34 +1,176 @@
-/* --- Spark Particle Styles --- */
-#particle-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.spark {
+body {
+    background-color: #0c0812; /* Darker arcane background */
+    color: #e0d4c8;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+.library-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.library-header h1 {
+    font-size: 3.5rem;
+    color: #d4af37;
+    /* Soft ambient text glow */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.2);
+    margin-bottom: 0.5rem;
+}
+
+.bookshelf-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    padding-top: 50px;
+}
+
+.shelf {
+    position: relative;
+}
+
+/* Ambient glow cast on the wall behind each shelf */
+.shelf::before {
+    content: '';
     position: absolute;
-    bottom: -10px;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(212,175,55,0.8) 40%, rgba(139,92,246,0) 100%);
-    border-radius: 50%;
-    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.8));
-    animation: driftUpwards linear forwards;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    height: 180px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    filter: blur(20px);
+    pointer-events: none;
 }
 
-@keyframes driftUpwards {
+.books {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    padding: 0 40px;
+    height: 270px;
+    position: relative;
+    z-index: 2;
+}
+
+/* The Wooden Board */
+.shelf-board {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, #4a2e1b, #26160b);
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 3;
+}
+
+/* Book Styling */
+.book {
+    width: 60px;
+    border-radius: 4px 4px 0 0;
+    box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.6), inset 2px 0 5px rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Subtly breathe life into the magical library by pulsing unhovered books */
+.book {
+    animation: floating-slight 4s ease-in-out infinite alternate;
+}
+
+/* Stagger the animation so all books do not float at the exact same rhythm */
+.book:nth-child(2n) { animation-delay: 0.5s; animation-duration: 4.5s; }
+.book:nth-child(3n) { animation-delay: 1s; animation-duration: 3.8s; }
+
+/* Interactive hover aura and movement */
+.book:hover {
+    transform: translateY(-30px) scale(1.08) rotate(-2deg);
+    animation-play-state: paused; /* Freeze the background floating animation on hover */
+    z-index: 15;
+}
+
+.book-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.85;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Magical Spine Colors + Custom Glows */
+.spine-red { 
+    background: linear-gradient(#b32d2d, #660c0c); 
+}
+.spine-red:hover {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-gold { 
+    background: linear-gradient(#d4af37, #8a6d1c); 
+}
+.spine-gold:hover {
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-purple { 
+    background: linear-gradient(#7e30a6, #3c0954); 
+}
+.spine-purple:hover {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-blue { 
+    background: linear-gradient(#267cd4, #0a335e); 
+}
+.spine-blue:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-green { 
+    background: linear-gradient(#2e9944, #0a4716); 
+}
+.spine-green:hover {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-black { 
+    background: linear-gradient(#3a3a3a, #111111); 
+    border: 1px solid #444;
+}
+.spine-black:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+.spine-teal { 
+    background: linear-gradient(#208e91, #094142); 
+}
+.spine-teal:hover {
+    box-shadow: 0 0 25px rgba(20, 184, 166, 0.7), -5px 15px 20px rgba(0,0,0,0.6);
+}
+
+/* Animations */
+@keyframes floating-slight {
     0% {
-        transform: translateY(0) translateX(0) scale(0.5);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
+        transform: translateY(0);
     }
     100% {
-        transform: translateY(-105vh) translateX(var(--sway, 30px)) scale(1.2);
-        opacity: 0;
+        transform: translateY(-6px);
     }
 }
