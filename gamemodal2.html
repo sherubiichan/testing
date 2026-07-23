@@ -8,9 +8,6 @@
 </head>
 <body>
 
-    <!-- Particle container for the sparks -->
-    <div id="particle-container"></div>
-
     <header class="library-header">
         <h1>The Arcane Archives</h1>
         <p>Your portal to mystical realms and ancient grimoires.</p>
@@ -52,82 +49,39 @@
             <div class="shelf-board"></div>
         </div>
     </main>
-
-    <!-- Inline Script to ensure execution -->
+     <!-- Script to run the popup logic -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const container = document.getElementById('particle-container');
-            
-            if (!container) {
-                console.error("Spark container missing!");
-                return;
-            }
+            const books = document.querySelectorAll('.book');
+            const modal = document.getElementById('book-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+            const closeBtn = document.getElementById('modal-close');
 
-            function createSpark() {
-                const spark = document.createElement('div');
-                spark.classList.add('spark');
+            // Open modal when a book is clicked
+            books.forEach(book => {
+                book.addEventListener('click', () => {
+                    const title = book.getAttribute('title');
+                    const desc = book.getAttribute('data-desc');
+                    
+                    modalTitle.textContent = title;
+                    modalDesc.textContent = desc;
+                    modal.classList.add('active');
+                });
+            });
 
-                const size = Math.random() * 5 + 3;
-                spark.style.width = `${size}px`;
-                spark.style.height = `${size}px`;
-                spark.style.left = `${Math.random() * 100}vw`;
+            // Close modal when close button is clicked
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
 
-                const duration = Math.random() * 7 + 8;
-                spark.style.animationDuration = `${duration}s`;
-
-                const sway = (Math.random() * 100 - 50) + 'px';
-                spark.style.setProperty('--sway', sway);
-
-                if (Math.random() > 0.6) {
-                    spark.style.background = 'radial-gradient(circle, #fff 0%, #a855f7 50%, transparent 100%)';
-                    spark.style.filter = 'drop-shadow(0 0 5px rgba(168, 85, 247, 0.8))';
+            // Close modal if user clicks outside the card area
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
                 }
-
-                container.appendChild(spark);
-
-                setTimeout(() => {
-                    spark.remove();
-                }, duration * 1000);
-            }
-
-            // Start spawning sparks immediately
-            setInterval(createSpark, 300);
+            });
         });
-        /* --- Spark Particle Styles --- */
-#particle-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.spark {
-    position: absolute;
-    bottom: -10px;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(212,175,55,0.8) 40%, rgba(139,92,246,0) 100%);
-    border-radius: 50%;
-    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.8));
-    animation: driftUpwards linear forwards;
-}
-
-@keyframes driftUpwards {
-    0% {
-        transform: translateY(0) translateX(0) scale(0.5);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-105vh) translateX(var(--sway, 30px)) scale(1.2);
-        opacity: 0;
-    }
-}
-
     </script>
 </body>
 </html>
