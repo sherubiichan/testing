@@ -137,6 +137,11 @@ body {
     /* Change the rgba color values to change the magical glow tint */
     box-shadow: 0 0 25px rgba(230, 92, 0, 0.8), -5px 15px 20px rgba(0,0,0,0.6); 
 }
+.spine-black-gold { 
+    background: linear-gradient(#3a3a3a, #111111); 
+    border-left: 4px solid #d4af37; /* Adds a gold binding stripe on the edge */
+    border-right: 4px solid #d4af37;
+}
 
 
 @keyframes floating-slight {
