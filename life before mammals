@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"  />
+        <meta name="viewport" content="width-device-width, initial width=1.0"  />
+        <link rel="stylesheet" href="style.css"  />
+        <title>Ancient Art & Beliefs Week -2</title>
+    </head>
+    <body>
+        <div class="flipbook">
+        <div class="hard">ancient art & beliefs, week -2</div>
+        <div class="hard"></div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_uAJY1mqtw4?si=I-IaC0H9WuYI5wyB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>On the Origin of Life - short descriptions of a few hypotheses and the basic mechanisms of life</small>
+            </div>
+            <div>
+                <<iframe width="560" height="315" src="https://www.youtube.com/embed/K1xnYFCZ9Yg?si=Ytj1MPLtsj6nl2wq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>Brief description of RNA World Hypothesis and basic mechanisms of RNA</small>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VYQQD0KNOis?si=PBfjMSMjSRCadA5n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>Super short description of RNA World Hypothesis and basic mechanisms of RNA</small>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/og59L1UYUog?si=hfPJF7LsxtbfZmGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>More recent documentation of RNA World in studies with slightly expanded mechanisms of RNA</small>
+            </div>
+            <div>
+                <a href="https://en.wikipedia.org/wiki/Sundaland" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Sundaland-at-the-Last-Glacial-Maximum-showing-the-modern-distribution-of-land-in-dark.png" alt=""  /></a>
+                <small>"Sundaland" - at the border of Southeast Asia and Oceania - 2.5MYA-12KYA</small>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/W8W4XMokB8A?si=hLWa3gqum22vmKzA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>Humans began inhabiting and crossing Sundaland 70KYA. As the <a href="https://en.wikipedia.org/wiki/Last_Glacial_Maximum" target="_blank">Last Glacial Maximum</a> ended 20KYA, flooding separated Indonesia and Malaysia from mainland Asia</small>
+            </div>
+            <div>
+                <a href="https://digital.library.adelaide.edu.au/server/api/core/bitstreams/cc073119-2f9f-4379-854d-13ea614fd415/content" target="_blank">
+                    <img src="https://i1.rgstatic.net/publication/318562213_Human_occupation_of_northern_Australia_by_65000_years_ago/links/59d14e230f7e9b4fd7fa2697/largepreview.png" alt="" /></a>
+                <p><small>The proposed theory for how the modern human population of Australia originally arrived onto the ancient continent <a href="https://en.wikipedia.org/wiki/Sahul" target="_blank">Sahul</a> 60KYA was primarily by crossing Sundaland, then sailing across the slightly narrower stretch of sea between the ancient continents.
+                    The <a href="https://en.wikipedia.org/wiki/Wallace_Line" target="_blank">Wallace Line</a> delineates plant and animal species on either side of the boundary, so this channel was likely always underwater.</small></p>
+            </div>
+            <div>
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9899273/" target="_blank">
+                    <img src="https://i1.rgstatic.net/publication/368282344_Prehistoric_human_migration_between_Sundaland_and_South_Asia_was_driven_by_sea-level_rise/links/63df2f82c465a873a28f894b/largepreview.png" alt="" /></a>
+                <small>Kim, H. L., Li, T., Kalsi, N., Nguyen, H. T. T., Shaw, T. A., Ang, K. C., Cheng, K. C., Ratan, A., Peltier, W. R., Samanta, D., Pratapneni, M., Schuster, S. C., & Horton, B. P. (2023). Prehistoric human migration between Sundaland and South Asia was driven by sea-level rise. <italic>Communications biology</italic>, 6(1), 150.</small>
+            </div>
+            <div>
+                <a href="https://rdcu.be/fvhA5" target="_blank">
+                    <img src="https://i1.rgstatic.net/publication/399960718_Rock_art_from_at_least_67800_years_ago_in_Sulawesi/links/6971a6b2e806a472e6a514f1/largepreview.png" alt="" /></a>
+                <small>Oktaviana, A.A., Joannes-Boyau, R., Hakim, B. et al. Rock art from at least 67,800 years ago in Sulawesi. <italic>Nature</italic> <bold>650</bold>, 652–656 (2026).</small>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/qJxLhX7pbdM?si=aw9lF9-CaW48OJyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <small>Liang Metanduno/Pulau Muna (Muna Cave) in Sulawesi, Indonesia</small>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4LxPtKoaA2w?si=fZsK9GR7_qc4PLob" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>Liang Metanduno/Pulau Muna (Muna Cave) in Sulawesi, Indonesia</small>
+            </div>
+            <div>
+                <a href="https://www.nature.com/articles/s41586-024-07541-7#citeas" target="_blank">
+                    <img src="https://i1.rgstatic.net/publication/381960199_Narrative_cave_art_in_Indonesia_by_51200_years_ago/links/66861070f3b61c4e2cac53ae/largepreview.png" alt="" /></a>
+                <small>Oktaviana, A.A., Joannes-Boyau, R., Hakim, B. <italic>et al.</italic> Narrative cave art in Indonesia by 51,200 years ago. <italic>Nature</italic> <bold>631</bold>, 814–818 (2024). </small>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EhBnosm9B-U?si=cZ6ZlWcUIrqiYr3S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>cave in Leang Tedongnge in Pangkajene Islands Regency, Maros-Pangkep region of Indonesia</small>
+            </div>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/m3OUO99q-jI?si=xX4qLg-5ppuQ-MKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <small>cave in Leang Tedongnge in Pangkajene Islands Regency, Maros-Pangkep region of Indonesia</small>
+            </div>
+            <div>
+                <a href="https://www.anthropology.net/p/humanitys-oldest-ochre-mine-the-48000" target="_blank">
+                    <img src="https://substackcdn.com/image/fetch/$s_!Dpv-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe553c5a4-01cd-46de-b21a-02a490fb4072_1920x1354.jpeg" alt="" /></a>
+                <small>Red ochre pigments used in cave art from 48,000 year old mine in The Lion Cavern at Ngwenya, Eswatini, southern Africa</small>
+            </div>
+            <div>
+                <a href="https://www.researchgate.net/publication/341286526_Archaeological_Ochres_of_the_Rock_Art_Site_of_Leopard_Cave_Erongo_Namibia_Looking_for_Later_Stone_Age_Sociocultural_Behaviors" target="_blank">
+                    <img src="https://www.researchgate.net/publication/341286526/figure/fig4/AS:960365198323724@1605980314342/Grinding-and-crushing-tools-in-relation-with-abraded-ochre.png" alt="" /></a>
+                <small>Grinding and crushing tools found alongside ochre in Late Stone Age rock art site in Erongo Mountains in Namibia</small>
+            </div>
+            <div>
+                <a href="https://es.wikipedia.org/wiki/Marcelino_Sanz_de_Sautuola" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Sanz_de_Sautuola.jpg" alt=""  /></a>
+                <small>Marcelino Sanz de Sautuola, first to claim rediscovery of prehistoric cave art (linked the Spanish wikipedia article due to differing information from English version)</small>
+            </div>
+            <div>
+                <a href="https://es.wikipedia.org/wiki/Modesto_Cubillas" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Entrada_a_la_cueva_de_Altamira%2C_Santillana_del_Mar.jpg/1920px-Entrada_a_la_cueva_de_Altamira%2C_Santillana_del_Mar.jpg" alt=""  /></a>
+                <small>originally discovered by shared farm owner Modesto Cubillas Perez (linked the Spanish wikipedia article due to lack of English version)</small>
+            </div>
+            <div class="hard"></div>
+            <div class="hard">thanks for reading <small>~sherubiichan</small></div>
+        </div>
+        <script src="jquery.js"></script>
+        <script src="turn.js"></script>
+        <script>
+            $(".flipbook").turn();
+        </script>
+        <p>Return to <a href="https://sherubiichan.github.io/testing/">homepage.</a></p>
+    </body>
+</html>
